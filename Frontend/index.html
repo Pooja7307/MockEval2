@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome....</h1>
+    </header>
+    <main>
+        <form id="loginForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter the password" required>
+            <button type="submit">Login</button>
+        </form>
+    </main>
+</body>
+<script>
+    const validEmail = "empher@gmail.com";
+    const validPassword = "empher@123";
+    const loginForm = document.getElementById("loginForm");
+    loginForm.addEventListener("submit", function(event){
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        if(email === validEmail && password === validPassword){
+            alert ("Login Success, You are redirecting to quiz page.");
+            window.location.href = "quiz.html";
+        }else{
+            alert("Email or Password is incorrect , Please try again.");
+        }
+    });
+</script>
+</html>
